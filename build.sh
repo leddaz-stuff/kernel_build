@@ -1033,6 +1033,7 @@ if [ -n "${MODULES}" ]; then
   if [ -n "${IN_KERNEL_MODULES}" -o -n "${EXT_MODULES}" -o -n "${EXT_MODULES_MAKEFILE}" ]; then
     echo "========================================================"
     echo " Copying modules files"
+    cp -pv ${ROOT_DIR}/boot-artifacts/*.img ${ROOT_DIR}/prebuilts/boot-artifacts/ramdisks
     cp -pv ${MODULES} ${DIST_DIR}
     cp -pv ${ROOT_DIR}/device/google/raviole-kernel/bcmdhd4389.ko ${DIST_DIR}
     cp -pv ${ROOT_DIR}/device/google/raviole-kernel/google-bms.ko ${DIST_DIR}
