@@ -1033,7 +1033,10 @@ if [ -n "${MODULES}" ]; then
   if [ -n "${IN_KERNEL_MODULES}" -o -n "${EXT_MODULES}" -o -n "${EXT_MODULES_MAKEFILE}" ]; then
     echo "========================================================"
     echo " Copying modules files"
-    cp -p ${MODULES} ${DIST_DIR}
+    cp -pv ${MODULES} ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/bcmdhd4389.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/google-bms.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/panel-samsung-s6e3*.ko ${DIST_DIR}
     if [ "${COMPRESS_MODULES}" = "1" ]; then
       echo " Archiving modules to ${MODULES_ARCHIVE}"
       tar --transform="s,.*/,," -czf ${DIST_DIR}/${MODULES_ARCHIVE} ${MODULES[@]}
