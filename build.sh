@@ -1034,10 +1034,26 @@ if [ -n "${MODULES}" ]; then
     echo "========================================================"
     echo " Copying modules files"
     cp -pv ${ROOT_DIR}/boot-artifacts/*.img ${ROOT_DIR}/prebuilts/boot-artifacts/ramdisks
-    cp -pv ${MODULES} ${DIST_DIR}
+    cp -p ${MODULES} ${DIST_DIR}
     cp -pv ${ROOT_DIR}/device/google/raviole-kernel/bcmdhd4389.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/exynos-drm.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/google-battery.ko ${DIST_DIR}
     cp -pv ${ROOT_DIR}/device/google/raviole-kernel/google-bms.ko ${DIST_DIR}
-    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/panel-samsung-s6e3*.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/google-charger.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/google-cpm.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/google_dock.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/google_dual_batt_gauge.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/max1720x-battery.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/max20339.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/max77729-pmic.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/max77729_charger.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/max77729_uic.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/max77759_charger.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/overheat_mitigation.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/p9221.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/panel-boe-nt37290.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/panel-samsung-*.ko ${DIST_DIR}
+    cp -pv ${ROOT_DIR}/device/google/raviole-kernel/pca9468.ko ${DIST_DIR}
     if [ "${COMPRESS_MODULES}" = "1" ]; then
       echo " Archiving modules to ${MODULES_ARCHIVE}"
       tar --transform="s,.*/,," -czf ${DIST_DIR}/${MODULES_ARCHIVE} ${MODULES[@]}
